@@ -4,18 +4,18 @@ const User = require('../Models/userModel')
 const protectedRoute = async (req, res, next) => {
     try {
         const token =req.cookies.jwt
-        console.log(token);
+       
 
         if(!token){
             return res.status(401).json({error :"Unauthorized - no token provided for this request"})
         }
         const decoded = jwt.verify(token, process.env.jwt_secret)
-            console.log(decoded);
+           
         if (!decoded){
             return res.status(401).json({error :"Unauthorized - Invalid token"})
         }
         const user = await User.findById(decoded.userId).select("-password")
-            console.log(user);
+           
         if(!user){
             return res.status(401).json({error :"User not found"})
         }
