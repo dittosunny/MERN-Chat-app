@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const port = process.env.port
 const authroute = require('./routes/authRoute');
 const messageRoute = require('./routes/messageRoute');
+const userRoute = require('./routes/userRoute');
 const  connectMongoDb  = require('./DB/MDBconnection');
 
 
@@ -15,6 +16,7 @@ app.use(cookieParser())
 //routes
 app.use("/auth",authroute)
 app.use("/message",messageRoute)
+app.use("/users",userRoute)
 
 app.get('/', function(req, res) {   res.send('Hi') });  
 
