@@ -1,0 +1,16 @@
+# Node.js dependencies
+/node_modules
+
+# Environment variables file
+/.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Optional: Other entries you may want to ignore
+# /dist
+# /.vscode
+# .DS_Store (macOS)
+# Thumbs.db (Windows)
